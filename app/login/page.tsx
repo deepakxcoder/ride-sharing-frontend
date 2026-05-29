@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { ArrowRight, RefreshCcw } from "lucide-react";
+import { toast } from "react-toastify";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -41,9 +42,11 @@ export default function LoginPage() {
       );
 
       setCooldown(res.data.cooldown || 30);
+      toast.success(`OTP sent successfully \n Otp : ${res.data.otp}`, { position: "top-right", autoClose: 10000 });
       setStep("OTP");
       setAttemptsLeft(null);
     } catch (err: any) {
+      toast.error("Failed to send OTP", { position: "top-right", autoClose: 5000 });
       setError(err.response?.data?.message || "Failed to send OTP");
     } finally {
       setLoading(false);
@@ -196,6 +199,7 @@ if (roles.includes("admin")) {
           <h1 className="text-white text-7xl font-bold opacity-20">
             MAP VIEW
           </h1>
+          
         </div>
       </div>
     </div>

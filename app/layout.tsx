@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "maplibre-gl/dist/maplibre-gl.css";
+import { ToastContainer, Slide, Bounce, Flip } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +21,19 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-white text-black min-h-screen`}>
         {children}
-      </body>
+
+<ToastContainer
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          pauseOnHover
+          draggable
+          pauseOnFocusLoss
+          rtl={true}
+          theme="light"
+          style={{backgroundColor: "transparent"}}
+          transition={Flip}
+        />      </body>
     </html>
   );
 }
