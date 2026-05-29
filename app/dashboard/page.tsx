@@ -109,7 +109,7 @@ export default function Dashboard() {
         }
 
         // Socket
-        socketRef.current = io("http://localhost:3000");
+        socketRef.current = io(process.env.NEXT_PUBLIC_API_URL!);
 
         // Initial Fetch
         setTimeout(() => {

@@ -92,7 +92,7 @@ useEffect(() => {
 }, [ride?._id]);
     //SOCKET EVENTS
     useEffect(() => {
-        socketRef.current = io("http://localhost:3000");
+        socketRef.current = io(process.env.NEXT_PUBLIC_API_URL!);
 
         const riderId = localStorage.getItem("userId");
 

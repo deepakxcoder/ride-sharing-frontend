@@ -88,7 +88,7 @@ export default function DriverDashboard() {
   }
 );
             // Connect socket
-            socketRef.current = io("http://localhost:3000");
+            socketRef.current = io(process.env.NEXT_PUBLIC_API_URL!);
         } // ✅ THIS WAS MISSING
 
         // Cleanup
