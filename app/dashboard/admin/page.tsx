@@ -251,7 +251,7 @@ function DriversListView({ onSelectDriver }: { onSelectDriver: (d: DriverRequest
           {/* USER INFO */}
           <div className="flex gap-5 items-center">
             <div className="w-14 h-14 bg-black text-white rounded-full flex items-center justify-center font-bold text-xl">
-              {driver.userId.firstName[0]}
+              {driver.userId.firstName}
             </div>
             <div>
               <div className="font-bold text-lg text-slate-900">
@@ -351,7 +351,7 @@ function DriverDetailView({ driver, onBack }: { driver: DriverRequest, onBack: (
                 <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm h-fit">
                     <div className="flex flex-col items-center text-center mb-8">
                         <div className="w-24 h-24 bg-black text-white rounded-full flex items-center justify-center font-bold text-3xl mb-4">
-                            {driver.userId.firstName[0]}
+                            {driver.userId.firstName}
                         </div>
                         <h2 className="text-2xl font-bold text-slate-900">{driver.userId.firstName} {driver.userId.lastName}</h2>
                         <p className="text-slate-500">{driver.userId.phoneNumber}</p>
